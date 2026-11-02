@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redreach Sidebar</title>
+  <style>
+    /* Inline loading styles - shows immediately while JS loads */
+    #app-loader {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(to bottom, #fef7f0, #fdf4ef);
+      z-index: 9999;
+    }
+
+    .loader-content {
+      text-align: center;
+      animation: fadeIn 0.3s ease-in;
+    }
+
+    .loader-icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(to bottom right, #fed7aa, #fdba74);
+      border-radius: 16px;
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    .loader-spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba(234, 88, 12, 0.2);
+      border-top-color: #ea580c;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    .loader-text {
+      font-size: 14px;
+      color: #6b7280;
+      font-weight: 500;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Hide loader once Vue app mounts */
+    .app-mounted #app-loader {
+      display: none;
+    }
+  </style>
+  <script type="module" crossorigin src="/chunks/sidebar-yngvmBf6.js"></script>
+  <link rel="modulepreload" crossorigin href="/chunks/redreach_logo_black-D6zvyTOi.js">
+  <link rel="stylesheet" crossorigin href="/assets/redreach_logo_black-CVVsMZGf.css">
+  <link rel="stylesheet" crossorigin href="/assets/sidebar-xlpVC4ji.css">
+</head>
+<body>
+  <!-- Inline loader - shows immediately -->
+  <div id="app-loader">
+    <div class="loader-content">
+      <div class="loader-icon">
+        <div class="loader-spinner"></div>
+      </div>
+      <p class="loader-text">Loading Redreach...</p>
+    </div>
+  </div>
+
+  <!-- Vue app mounts here -->
+  <div id="app"></div>
+
+</body>
+</html>

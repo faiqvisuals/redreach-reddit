@@ -1,0 +1,31 @@
+{
+   "action": {
+      "default_popup": "popup.html",
+      "default_title": "Default Popup Title"
+   },
+   "background": {
+      "service_worker": "background.js"
+   },
+   "content_scripts": [ {
+      "js": [ "content-scripts/content.js" ],
+      "matches": [ "*://chat.reddit.com/*", "*://www.reddit.com/*" ]
+   } ],
+   "description": "Redreach is a browser extension that allows you to automate your Reddit messaging outreach.",
+   "host_permissions": [ "*://www.reddit.com/*", "*://chat.reddit.com/*", "http://localhost:8000/*", "https://redreach.ai/*", "http://localhost:1338/*", "https://redreach-strapi-production.up.railway.app/*" ],
+   "icons": {
+      "128": "icons/128.png",
+      "16": "icons/16.png",
+      "32": "icons/32.png",
+      "48": "icons/48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApqqZPVWz9tEGZG5iKmvNSW+wDGvY64kYRfvOW3aDPp/CdPMaL0y2siOzY3Wmgbf9OnjQLEQWeE0qmNZDSHDCG8pVPFCXIUtVFYAc25ggYFmScBgbMLJJ9EqCFs5lvul1pC7lyodqEVhOYClicnqJhvDaVixbH7z+RNx/H5mXhA+mvsdWI4mg0e2+ixJwgpGJTKLyxwiUA4SIe6yskvd9lyDc2IvQjBFPiiQYEGpCCHJ1FXDrSClGy9N2U1Fnh4YZcQkgXwJ8hEKehnNk38hcmjLxAp3CZ4esUT/AoFg43/Ih07F43AHW4fYXaiTdKop2AaHCuRXiMwQncsUeKgRtSwIDAQAB",
+   "manifest_version": 3,
+   "name": "Redreach - Reddit DM Automation",
+   "permissions": [ "storage", "activeTab", "cookies" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0.5",
+   "web_accessible_resources": [ {
+      "matches": [ "*://www.reddit.com/*", "*://chat.reddit.com/*" ],
+      "resources": [ "sidebar.html", "redreach_logo_black.png" ]
+   } ]
+}
